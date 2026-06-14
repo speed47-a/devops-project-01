@@ -4,7 +4,14 @@
 End-to-end CI/CD pipeline for a Java Spring Boot web application deployed on AWS.
 
 ## Architecture
-![Pipeline Flow](https://i.imgur.com/placeholder.png)
+
+## Pipeline Flow
+
+```
+GitHub → Jenkins → Maven Build → Docker Image → Docker Hub → EC2
+   ↓          ↓           ↓             ↓              ↓        ↓
+ Push      Pull       WAR file      Container      Registry   Run
+
 
 ## Tools & Technologies
 | Tool | Purpose |
@@ -65,6 +72,18 @@ docker compose up -d
 
 ### 4. Run Pipeline
 Click **Build Now** — pipeline runs automatically on every push.
+
+## Screenshots
+
+### Jenkins Pipeline
+![Jenkins](screenshots/jenkins-pipeline.png)
+
+### Docker Hub
+![DockerHub](screenshots/dockerhub.png)
+
+### AWS EC2
+![EC2](screenshots/ec2.png)
+
 
 ## Author
 Mohamed Ashraf Abdullah
