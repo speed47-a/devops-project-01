@@ -49,7 +49,7 @@ pipeline {
         stage('4 - Health Check') {
             steps {
                 sh "sleep 10"
-                sh "curl -f http://${EC2_HOST}:8080 || true"
+                sh "curl http://${EC2_HOST}:8080 || true"
             }
         }
     }
